@@ -14,7 +14,6 @@ import {HeroService} from './hero.service';
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
-    <my-hero-detail></my-hero-detail>
     `,
   styles: [`
     .selected {
@@ -75,10 +74,10 @@ export class HeroesComponent implements OnInit{
 
   constructor(private _heroService: HeroService){}
 
-  getHeroes(){console.log('calling getHeroes 2'); this._heroService.getHeroes()
+  getHeroes(){this._heroService.getHeroes()
     .then(heroes => this.heroes = heroes);
   }
   ngOnInit(){this.getHeroes();}
 
-  onSelect(hero: Hero){ this.selectedHero = hero;}
+  onSelect(hero: Hero){this.selectedHero = hero;}
 }
