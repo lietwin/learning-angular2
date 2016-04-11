@@ -15,14 +15,17 @@ export class HeroesComponent implements OnInit {
   title = 'My heroes';
   selectedHero: Hero;
   heroes: Hero[];
+  errorMessage: any;
 
   constructor(private _heroService: HeroService, private _router: Router) { }
+  ngOnInit() { this.getHeroes(); }
 
   getHeroes() {
   this._heroService.getHeroes()
-    .then(heroes => this.heroes = heroes);
+    .subscribe(heroes => this.heroes = heroes);
+              // error => this.errorMessage = <any> error);
   }
-  ngOnInit() { this.getHeroes(); }
+
 
   onSelect(hero: Hero) { this.selectedHero = hero; }
 

@@ -1,9 +1,10 @@
-import {Component, OnInit} from 'angular2/core';
+import { Component, OnInit} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {HTTP_PROVIDERS}    from 'angular2/http';
 
-import {HeroesComponent} from './heroes.component';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroService} from './hero.service';
+import { HeroesComponent} from './heroes.component';
+import { HeroDetailComponent} from './hero-detail.component';
+import { HeroService} from './hero.service';
 
 import {DashboardComponent} from './dashboard.component';
 
@@ -21,6 +22,7 @@ import {DashboardComponent} from './dashboard.component';
   directives: [ROUTER_DIRECTIVES],
   providers: [
      ROUTER_PROVIDERS,
+     HTTP_PROVIDERS,
      HeroService
    ]
 })
