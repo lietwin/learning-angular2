@@ -6,7 +6,8 @@ import {HeroService} from './hero.service';
 
 @Component({
     selector: 'my-hero-detail',
-    templateUrl: 'hero-detail.component.html'
+    templateUrl: 'app/hero-detail.component.html',
+    styleUrls: ['app/hero-detail.component.css']
 })
 
 export class HeroDetailComponent implements OnInit{
@@ -17,9 +18,10 @@ constructor(
   private _routeParams: RouteParams
 ){}
 ngOnInit (){
+  // + a js operator that turns string into number
   let id = +this._routeParams.get('id');
     this._heroService.getHero(id)
-      .then(hero => this.hero = hero);
+      .then(hero => this.hero = hero[0]);
 }
 
 goBack() {

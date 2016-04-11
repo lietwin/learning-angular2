@@ -1,12 +1,13 @@
 import {Component} from 'angular2/core';
-import {Router} from 'angular2/Router';
+import {Router} from 'angular2/router';
 
 import {Hero} from './hero';
 import {HeroService} from './hero.service';
 
 @Component({
-  selector: 'dashboard',
-  templateUrl: 'app/dashboard.component.html'
+    selector: 'dashboard',
+    templateUrl: 'app/dashboard.component.html',
+    styleUrls: ['app/dashboard.component.css']
 })
 
 export class DashboardComponent {

@@ -17,8 +17,9 @@ import {DashboardComponent} from './dashboard.component';
     </nav>
     <router-outlet></router-outlet>
   `,
-   directives: [ROUTER_DIRECTIVES],
-   providers: [
+  styleUrls: ['app/app.component.css'],
+  directives: [ROUTER_DIRECTIVES],
+  providers: [
      ROUTER_PROVIDERS,
      HeroService
    ]
