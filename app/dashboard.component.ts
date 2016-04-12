@@ -21,9 +21,12 @@ export class DashboardComponent {
     private _router: Router
   ){}
 
-  ngOnInit() { this._heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
-              // error => this.errorMessage = <any> error);
+  ngOnInit() {
+    this._heroService.getHeroes()
+      .subscribe(
+        heroes => this.heroes = heroes.slice(1, 5),
+        error => this.errorMessage = error
+    );
   }
 
   gotoDetail(hero: Hero) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
+import { Observable } from 'rxjs';
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
@@ -16,17 +17,18 @@ export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   heroes: Hero[];
   errorMessage: any;
-
   constructor(private _heroService: HeroService, private _router: Router) { }
-  ngOnInit() { this.getHeroes(); }
-
-  getHeroes() {
-  this._heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
-              // error => this.errorMessage = <any> error);
+  ngOnInit() {
+    this.getHeroes();
   }
 
-
+  getHeroes(){
+    this._heroService.getHeroes()
+      .subscribe(
+        heroes => this.heroes = heroes,
+        error => this.errorMessage = error
+      );
+  }
   onSelect(hero: Hero) { this.selectedHero = hero; }
 
   gotoDetail() {

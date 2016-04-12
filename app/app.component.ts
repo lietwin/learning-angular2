@@ -1,6 +1,6 @@
 import { Component, OnInit} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {HTTP_PROVIDERS}    from 'angular2/http';
+import {HTTP_PROVIDERS} from 'angular2/http';
 
 import { HeroesComponent} from './heroes.component';
 import { HeroDetailComponent} from './hero-detail.component';
@@ -20,6 +20,7 @@ import {DashboardComponent} from './dashboard.component';
   `,
   styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
+  //declaring the providers: router and http and custom services
   providers: [
      ROUTER_PROVIDERS,
      HTTP_PROVIDERS,
