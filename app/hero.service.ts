@@ -24,11 +24,16 @@ export class HeroService {
       }
 
     getHero(id:number){
-      return Promise.resolve(HEROES)
-        .then(heroes => heroes.filter(hero => hero.id === id));
-        /*return this.http.get(this._heroesUrl)
-          .map(res => <Hero> res.json().filter(hero => hero.id === id))
-          .do(data => console.log(data)) // dev only to check data
-          .catch(this.handleError);*/
+      return this.http.get(this._heroesUrl)
+        .map(res => <Hero> res.json().heroes.filter(hero => hero.id === id))
+        .do(data => console.log(data)) // dev only to check data
+        .catch(this.handleError);
+      // or convert an observable into a promise
+        /*.toPromise()
+        .then(res => <Hero> res.json().heroes.filter(hero => hero.id === id));*/
+    }
+
+    addHero(name: string){
+
     }
 }
