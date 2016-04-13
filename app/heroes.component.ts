@@ -29,6 +29,16 @@ export class HeroesComponent implements OnInit {
         error => this.errorMessage = error
       );
   }
+
+  addHero(name: string){
+    if(!name) {return ;}
+    this._heroService.addHero(name)
+      .subscribe(
+        hero => this.heroes.push(hero),
+        error => this.errorMessage = <any> error
+      );
+  }
+
   onSelect(hero: Hero) { this.selectedHero = hero; }
 
   gotoDetail() {

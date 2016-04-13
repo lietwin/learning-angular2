@@ -8,4 +8,4 @@ Learning Angular 2 by following the official tutorial Tour of Heroes <https://an
 [x] Angular 2 services and dependency injection
 [x] Multiple components: refactoring with SRP in mind
 [x] Routing implementation
-[ ] Retrieving data from http
+[] Retrieving data from http

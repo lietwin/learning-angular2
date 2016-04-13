@@ -12,3 +12,10 @@
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
+<div>
+<input #newHero />
+<button (click)="addHero(newHero.value); newHero.value=''">
+ Add Hero
+</button>
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>
