@@ -9,3 +9,7 @@ Learning Angular 2 by following the official tutorial Tour of Heroes <https://an
 [x] Multiple components: refactoring with SRP in mind
 [x] Routing implementation
 [] Retrieving data from http
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lietwin/learning-angular2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
